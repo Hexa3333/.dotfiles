@@ -22,12 +22,33 @@ keymap("n", "<leader>fw", ":w!<cr>", opts)
 keymap("n", "<leader>q", ":q<cr>", opts)
 keymap("n", "<leader>fq", ":q!<cr>", opts)
 
+-- Explorer
+keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+
+
 -- WINDOW NAVIGATION
 keymap("n", "<M-j>", "<C-w>j", opts)
 keymap("n", "<M-k>", "<C-w>k", opts)
 keymap("n", "<M-h>", "<C-w>h", opts)
 keymap("n", "<M-l>", "<C-w>l", opts)
 
+-- WINDOW RESIZING
+keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
+
 -- Line start/end
 keymap("n", "-", "<End>", opts)
 keymap("n", "*", "<Home>", opts)
+
+
+-- Visual Mode --
+
+-- Stay in indent
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
+
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
