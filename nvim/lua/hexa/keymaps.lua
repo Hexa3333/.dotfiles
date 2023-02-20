@@ -10,11 +10,22 @@ vim.g.maplocalleader = " "
 -- Quick Switch
 keymap("i", "jk", "<ESC>", opts)
 
--- Quick Move
+-- Quick Access Normal Mode
 keymap("i", "<C-j>", "<C-o>j", opts)
 keymap("i", "<C-k>", "<C-o>k", opts)
 keymap("i", "<C-h>", "<C-o>h", opts)
 keymap("i", "<C-l>", "<C-o>l", opts)
+
+keymap("i", "<C-H>", "<C-w>", opts) -- Ctrl + Backspace Deletion
+keymap("i", "<C-p>", "<C-o>p", opts)
+keymap("i", "<C-u>", "<C-o>u", opts)
+
+-- Search
+keymap("n", "<C-f>", "/", opts)
+
+-- Move Page
+keymap("n", "<C-j>", "<C-e>", opts)
+keymap("n", "<C-k>", "<C-y>", opts)
 
 -- Saving / Loading
 keymap("n", "<leader>w", ":w<cr>", opts)
@@ -24,7 +35,6 @@ keymap("n", "<leader>fq", ":q!<cr>", opts)
 
 -- Explorer
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 
 -- WINDOW NAVIGATION
 keymap("n", "<M-j>", "<C-w>j", opts)
@@ -39,8 +49,8 @@ keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 
 -- Line start/end
-keymap("n", "-", "<End>", opts)
-keymap("n", "*", "<Home>", opts)
+keymap("n", "=", "<End>", opts)
+keymap("n", "-", "<Home>", opts)
 
 
 -- Visual Mode --
