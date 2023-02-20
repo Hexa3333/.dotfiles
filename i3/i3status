@@ -1,0 +1,33 @@
+general {
+	output_format = "i3bar"
+	markup = "pango"
+	colors = true
+	interval = 5
+}
+
+order += "ethernet enp0s31f6"
+order += "memory"
+order += "volume master"
+order += "tztime istanbul"
+
+ethernet enp0s31f6 {
+	format_up = "E: %ip"
+	format_down = "E: down"
+}
+
+memory {
+        format = "Mem: %used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+volume master {
+	format = "Vol: %volume"
+	format_muted = "<span color='#ff293e'>Vol: MUTED</span>"
+	device = "default"
+}
+
+tztime istanbul {
+	format = "%d.%m.%Y %H:%M"
+	timezone = "Europe/Istanbul"
+}
