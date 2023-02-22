@@ -24,7 +24,7 @@ o.swapfile = false
 
 o.termguicolors = true
 o.background= "dark"
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd "colorscheme gruvbox"
 
 o.wrap = false
 
