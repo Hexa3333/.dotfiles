@@ -3,13 +3,16 @@ local o = vim.opt
 
 o.writebackup = true
 o.backup = false
-o.updatetime = 300
+o.updatetime = 20
 
 o.clipboard = "unnamedplus" -- win32yank
 
 o.number = true
 o.relativenumber = true
 o.numberwidth = 3
+
+--o.foldcolumn=12
+
 
 vim.cmd "set ve+=onemore" -- Allows to go one past the last character
 
@@ -31,4 +34,3 @@ o.wrap = false
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-

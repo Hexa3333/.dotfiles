@@ -7,16 +7,18 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "ı", "<insert>", opts)
+
 -- Quick Switch
 keymap("i", "jk", "<ESC>", opts)
 
 -- Quick Access Normal Mode
-keymap("i", "<C-j>", "<C-o>j", opts)
-keymap("i", "<C-k>", "<C-o>k", opts)
-keymap("i", "<C-h>", "<C-o>h", opts)
-keymap("i", "<C-l>", "<C-o>l", opts)
+keymap("i", "<M-j>", "<C-o>j", opts)
+keymap("i", "<M-k>", "<C-o>k", opts)
+keymap("i", "<M-h>", "<C-o>h", opts)
+keymap("i", "<M-l>", "<C-o>l", opts)
 
-keymap("i", "<C-H>", "<C-w>", opts) -- Ctrl + Backspace Deletion
+keymap("i", "<C-H>", "<C-W>", opts) -- Ctrl + Backspace Deletion
 keymap("i", "<C-p>", "<C-o>p", opts)
 keymap("i", "<C-u>", "<C-o>u", opts)
 
@@ -36,29 +38,19 @@ keymap("n", "<leader>fq", ":q!<cr>", opts)
 -- Explorer
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
--- WINDOW NAVIGATION
-keymap("n", "<M-j>", "<C-w>j", opts)
-keymap("n", "<M-k>", "<C-w>k", opts)
-keymap("n", "<M-h>", "<C-w>h", opts)
-keymap("n", "<M-l>", "<C-w>l", opts)
-
 -- WINDOW RESIZING
 keymap("n", "<M-Up>", ":resize -2<CR>", opts)
 keymap("n", "<M-Down>", ":resize +2<CR>", opts)
 keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 
--- Line start/end
-keymap("n", "=", "<End>", opts)
-keymap("n", "-", "<Home>", opts)
+-- Go To Line start/end
+keymap("n", "0", "<Home>", opts)
+keymap("n", "*", "<End>", opts)
 
 
 -- Visual Mode --
 
--- Stay in indent
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
 
-
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- SPESIFIC PREFERENCE FUNCTIONALITY
+keymap("n", "<leader>t", ":!pdflatex.exe %<CR>", opts) -- Easier access to LaTeX

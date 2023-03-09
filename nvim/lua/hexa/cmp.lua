@@ -16,15 +16,16 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
+  Text = "󰊄",
+  Method = "󰅲",
+  Function = "󰊕",
+  Constructor = "󰣪",
+  Field = "󰽐",
+  Variable = "V",
+  Class = "",
   Interface = "",
   Module = "",
   Property = "",
@@ -53,11 +54,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -65,7 +63,6 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -110,9 +107,10 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "luasnip" },
+	{ name = "nvim_lsp" },
     { name = "buffer" },
-    { name = "path" },
+    { name = "luasnip" },
+    { name = "path" }
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -122,7 +120,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered(),
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }
